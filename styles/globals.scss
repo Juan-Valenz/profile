@@ -1,0 +1,93 @@
+// Color schemes
+@mixin dark {
+  --primary: var(--grey);
+  --secondary: var(--darkBlue);
+  --primary_txt: var(--white);
+  --secondary_txt: var(--lightBlue);
+}
+
+@mixin light {
+  --primary: var(--white);
+  --secondary: var(--lightBlue);
+  --primary_txt: var(--grey);
+  --secondary_txt: var(--darkBlue);
+}
+
+:root{
+  // Color schemes
+  --grey:  hsl(0, 0%, 15%);
+  --white:  hsl(210, 80%, 95%);
+  --lightBlue: hsl(209, 100%, 85%);
+  --darkBlue: hsl(210, 24%, 30%);
+  
+  --semitransparent: hsla(0, 0%, 16%, 0.1);
+  @media (prefers-color-scheme: dark) {
+    @include dark;
+  }
+  @media (prefers-color-scheme: light) {
+    @include light;
+  }
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html ,
+body {
+  // Color schemes
+  @media (prefers-color-scheme: normal) {
+    color-scheme: normal;
+  }
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    color-scheme: light;
+  }
+  &.dark {
+    @include dark;
+  }    
+  &.light {
+    @include light;
+  }
+  // SCROLLBAR for Firefox
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) transparent;
+}
+
+/* SCROLLBAR for Chrome, Edge and Safari */
+::-webkit-scrollbar {
+  width: .5vw;
+  height: .5vw;
+}
+::-webkit-scrollbar:hover {
+  width: 10vw;
+  height: 10vw;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(var(--secondary), var(--primary), var(--secondary));
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+  width: 10vw;
+  height: 10vw;
+}
+::-webkit-scrollbar-track {
+  margin-block: 5em;
+  background-color: transparent;
+  border-radius: 100vw;
+}
+
+body {
+  color: var(--primary_txt);
+  background: var(--primary);
+  text-rendering: optimizeSpeed;
+}
