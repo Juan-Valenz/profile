@@ -1,32 +1,44 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import styles from '../assets/Navigation.module.scss'
+import styles from '../assets/navigation.module.scss'
 
 interface page {
-  key: number;
   url: string;
   name: string;
-  img_url: string;
+  img: img;
 }
 
 // interface svg {
 //   d: string;
 //   box: string;
 // }
-
+interface img {
+  url: string;
+  alt: string;
+  width: number;
+  height: number;
+}
 const pages: page[] = [
   {
-    key: 0,
     url: '/',
     name: 'Home',
-    img_url: '/home.svg'
+    img: {
+      url: '/home.svg',
+      alt: 'home icon',
+      width: 20,
+      height: 20
+    }
   },
   {
-    key: 1,
-    url: '/shifts',
-    name: 'Shifts',
-    img_url: '/vercel.svg'
+    url: '/education',
+    name: 'Education',
+    img: {
+      url: '/education.svg',
+      alt: 'education icon',
+      width: 20,
+      height: 20
+    }
   }
 ]
 
@@ -35,19 +47,19 @@ const Navigation: React.FC = () => {
     <>
       <nav className={styles.nav}>
         {
-          pages && pages.map(page => <PageLink key={page.key} url={page.url} name={page.name} img_url={page.img_url} />)
+          pages && pages.map(page => <PageLink key={page.url} url={page.url} name={page.name} img={page.img} />)
         }
       </nav>
     </>
   )
 }
 
-const PageLink: React.FC<page> = ({key,url,img_url, name}) => {
+const PageLink: React.FC<page> = ({ url, name, img}) => {
   return (
-    <Link key={key} href={url}>
+    <Link href={url}>
       <a className={styles.link}>
         <p>{name}</p>
-        <Image src={img_url} alt="Icon" width={50} height={50} />
+        <Image src={img.url} alt={img.alt} width={img.width} height={img.height} />
       </a>
     </Link>
   )
