@@ -5,6 +5,7 @@ import Head from 'next/head'
 
 const Home: NextPage = () => {
   return (
+    <>
       <Head>
         <title>Juan Valenz | Portfolio</title>
         <meta name="description" content="General Description about myself, my work and hobbies." />
@@ -12,7 +13,14 @@ const Home: NextPage = () => {
         <meta name="author" content="Juan Valenzuela" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
+
+    </>
   )
 }
+
+const header: React.FC = () => (
+  <div >
+  </div>
+)
 
 export default Home
