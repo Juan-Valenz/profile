@@ -1,26 +1,30 @@
+
 // Color schemes
 @mixin dark {
-  --primary: var(--grey);
-  --secondary: var(--darkBlue);
+  --primary: var(--black-light);
+  --secondary: var(--blue_dark);
   --primary_txt: var(--white);
-  --secondary_txt: var(--lightBlue);
+  --secondary_txt: var(--blue_light);
 }
-
 @mixin light {
   --primary: var(--white);
-  --secondary: var(--lightBlue);
-  --primary_txt: var(--grey);
-  --secondary_txt: var(--darkBlue);
+  --secondary: var(--blue_light);
+  --primary_txt: var(--black-light);
+  --secondary_txt: var(--blue_dark);
 }
 
 :root{
+  /* Dark colors */
+  --black: hsl(0, 0%, 9%);
+  --black-light: hsl(0, 0%, 14%);
+  --grey-dark:hsl(0, 0%, 19%);
+  /* Light colors */
+  --white: hsl(0, 0%, 91%);
+  --white-dark: hsl(0, 0%, 86%);
+  --grey-light:hsl(0, 0%, 81%);
   // Color schemes
-  --grey:  hsl(0, 0%, 15%);
-  --white:  hsl(210, 80%, 95%);
-  --lightBlue: hsl(209, 100%, 85%);
-  --darkBlue: hsl(210, 24%, 30%);
-  
-  --semitransparent: hsla(0, 0%, 16%, 0.1);
+  --blue_light: hsl(210, 100%, 86%);
+  --blue_dark: hsl(210, 24%, 30%);
   @media (prefers-color-scheme: dark) {
     @include dark;
   }
