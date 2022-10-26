@@ -1,4 +1,4 @@
-import '../styles/globals.scss'
+import '../styles/global.scss'
 import type { AppProps } from 'next/app'
 import { Head } from 'next/document'
 import Navigation from '../components/navigation'
@@ -6,11 +6,12 @@ import Navigation from '../components/navigation'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <header> <Navigation /></header>
+      <header>
+        <Navigation />
+      </header>
       <main>
         <Component {...pageProps} />
       </main>
-      <footer></footer>
     </>
   )
 }
