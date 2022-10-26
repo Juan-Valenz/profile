@@ -37,7 +37,7 @@ const Navigation: React.FC = () => {
               <Link href={page.url}>
                 <a className={styles.link}>
                   <p>{page.name}</p>                          
-                  <img src={page.img_url} className={styles.svg}/>
+                  <Image src={page.img_url} alt="Icon" width={50} height={50}/>
                 </a>
               </Link>
             )
