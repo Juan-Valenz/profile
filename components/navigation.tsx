@@ -42,27 +42,21 @@ const pages: page[] = [
   }
 ]
 
-const Navigation: React.FC = () => {
-  return (
-    <>
-      <nav className={styles.nav}>
-        {
-          pages && pages.map(page => <PageLink key={page.url} url={page.url} name={page.name} img={page.img} />)
-        }
-      </nav>
-    </>
-  )
-}
+const Navigation: React.FC = () => (
+  <nav className={styles.nav}>
+    {
+      pages && pages.map(page => <PageLink key={page.url} url={page.url} name={page.name} img={page.img} />)
+    }
+  </nav>
+)
 
-const PageLink: React.FC<page> = ({ url, name, img}) => {
-  return (
-    <Link href={url}>
-      <a className={styles.link}>
-        <p>{name}</p>
-        <Image src={img.url} alt={img.alt} width={img.width} height={img.height} />
-      </a>
-    </Link>
-  )
-}
+const PageLink: React.FC<page> = ({ url, name, img }) => (
+  <Link href={url}>
+    <a className={styles.link}>
+      <p>{name}</p>
+      <Image src={img.url} alt={img.alt} width={img.width} height={img.height} />
+    </a>
+  </Link>
+)
 
 export default Navigation
