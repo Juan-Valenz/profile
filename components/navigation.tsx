@@ -35,7 +35,7 @@ const Navigation: React.FC = () => {
           pages.map(page => {   // for each page on the list it will create a button to navigate to the page
             return (
               <Link href={page.url}>
-                <a className={styles.link}>
+                <a key={page.url} className={styles.link}>
                   <p>{page.name}</p>                          
                   <Image src={page.img_url} alt="Icon" width={50} height={50}/>
                 </a>
