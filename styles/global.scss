@@ -1,16 +1,26 @@
 // Color schemes
 @mixin dark {
-  --primary: var(--black-light);
-  --secondary: var(--blue_dark);
+  color-scheme: dark;
+  --primary: var(--black);
+  --secondary: var(--black-light);
+  // Text
   --primary_txt: var(--white);
-  --secondary_txt: var(--blue_light);
+  --secondary_txt: var(--white-dark);
+  // Button
+  --primary_btn: var(--blue_light);
+  --secondary_btn: var(--blue_dark);
 }
 
 @mixin light {
-  --primary: var(--white-dark);
-  --secondary: var(--blue_light);
+  color-scheme: light;
+  --primary: var(--white);
+  --secondary: var(--white-dark);
+  // Text
   --primary_txt: var(--black);
-  --secondary_txt: var(--blue_dark);
+  --secondary_txt: var(--black-light);
+  // Button
+  --primary_btn: var(--blue_dark);
+  --secondary_btn: var(--blue_light);
 }
 
 :root {
@@ -24,12 +34,13 @@
   --grey-light: hsl(0, 0%, 81%);
   // Color schemes
   --blue_light: hsl(210, 100%, 86%);
-  --blue_dark: hsl(210, 24%, 30%);
+  --blue: hsl(210, 24%, 30%);
+  --blue_dark: hsl(210, 40%, 15%);
 
   @include light;
 
   // Layout lengths
-  --header-height: 6rem;
+  --header-height: 4rem;
   --main-height: calc(100vh - var(--header-height));
 }
 
@@ -40,15 +51,16 @@
   -webkit-box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   // SCROLLBAR for Firefox
   scrollbar-width: thin;
   scrollbar-color: var(--secondary) transparent;
 }
-html, 
+
+html,
 body {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 
@@ -56,20 +68,15 @@ body {
 
 body {
   // Color schemes
-  color-scheme: light;
-
   @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
     @include dark;
   }
 
   &.light {
-    color-scheme: light;
     @include light;
   }
 
   &.dark {
-    color-scheme: dark;
     @include dark;
   }
 }
@@ -90,18 +97,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(
-    var(--secondary),
-    var(--primary),
-    var(--secondary)
-  );
+  background-image: var(--secondary);
   border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
-  width: 10vw;
-  height: 10vw;
 }
 
 ::-webkit-scrollbar-track {
@@ -114,21 +115,21 @@ body {
 
 
 // Layout
-#__next {
-  display: flex;
-  flex-direction: column-reverse;
-}
+// #__next {
+//   display: flex;
+// }
 
 body {
   color: var(--primary_txt);
-  background: var(--primary);
+  background-color: var(--primary);
   text-rendering: optimizeSpeed;
 }
 
 header {
   height: var(--header-height);
-  background-color: var(--grey-dark);
+  background-color: var(--secondary);
 }
+
 main {
   min-height: var(--main-height);
 }
