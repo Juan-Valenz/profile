@@ -1,0 +1,176 @@
+.header {
+    // FLEX
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // LENGTH
+    padding-block: 16px;
+    padding-inline: 80px;
+    // margin-bottom: 50px;
+    // BACKGROUND
+    background-image: linear-gradient(90deg, var(--secondary), var(--tertiary), var(--primary));
+
+    // &::after {
+    //     content: "";
+    //     position: relative;
+    //     left: 0%;
+    //     bottom: 0%;
+    //     z-index: -1;
+    //     // LENGTH
+    //     height: 50px;
+    //     width: 10px;
+    // }
+
+    // &:before {
+    //     position: relative;
+    //     // LENGTH
+    //     height: 50px;
+    //     width: 100%;
+    //     // BACKGROUND
+    //     background-image: linear-gradient(90deg, var(--tertiary), var(--primary));
+    // }
+}
+
+.main {
+    // LENGTH
+    min-height: var(--main-height);
+    padding-top: .8rem;
+    // BACKGROUND
+    background-color: var(--primary);
+}
+
+// IMAGE
+.logo {
+    // Background
+    filter: var(--icon_inversion);
+    // BORDER
+    border-radius: 50px;
+}
+
+.colorScheme {
+    // LENGTH
+    width: 30px;
+    height: 30px;
+    // BACKGROUND
+    background-color: var(--tertiary);
+    // BORDER
+    border-radius: 50px;
+    // SHADOW
+}
+
+
+/*====================================
+                Waves
+==================================*/
+
+.waves {
+    /*DISPLAY*/
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .waves {
+        /*LENGTH*/
+        height: 150px;
+    }
+}
+
+@media (max-width: 650px) {
+    .waves {
+        /*LENGTH*/
+        height: 200px;
+    }
+}
+
+@media (max-width: 350px) {
+    .waves {
+        /*LENGTH*/
+        height: 250px;
+    }
+}
+
+/* ANIMATIONS */
+.waves>path:nth-child(1) {
+    animation-name: wave1;
+    /*TIME*/
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-delay: 0s;
+    /*OTHER*/
+    animation-timing-function: linear;
+}
+
+.waves>path:nth-child(2) {
+    animation-name: wave2;
+    /*TIME*/
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-delay: 0s;
+    /*OTHER*/
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.waves>path:nth-child(3) {
+    animation-name: wave3;
+    /*TIME*/
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+    animation-delay: 0s;
+    /*OTHER*/
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.waves>path:nth-child(4) {
+    animation-name: wave4;
+    /*TIME*/
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-delay: 0s;
+    /*OTHER*/
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes wave1 {
+    from {
+        /*HORIZONTAL*/
+        transform: translateX(0);
+    }
+
+    to {
+        /*HORIZONTAL*/
+        transform: translateX(-12px);
+    }
+}
+
+@keyframes wave2 {
+    from {
+        transform: translate(-20px, -0.3px);
+    }
+
+    to {
+        transform: translate(-8px, -0.3px);
+    }
+}
+
+@keyframes wave3 {
+    from {
+        transform: translate(-3px, -0.5px);
+    }
+
+    to {
+        transform: translate(-15px, -0.5px);
+    }
+}
+
+@keyframes wave4 {
+    from {
+        transform: translate(-14px, -0.5px);
+    }
+
+    to {
+        transform: translate(-2px, -0.5px);
+    }
+}
