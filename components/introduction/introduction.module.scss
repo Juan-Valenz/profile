@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.left {
+  width: 50vw;
+}
+
+.right {
+  width: 50vw;
+}
+
+.image {
+  position: relative;
+  left: 0%;
+  top: 50%;
+  width: 303px;
+  height: 138px;
+  @media (width > 870px) {
+    width: 803px;
+    height: 338px;
+
+  }
+  transition: width 2s, height 2s; 
+}
