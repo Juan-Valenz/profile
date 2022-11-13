@@ -1,42 +1,83 @@
 // Color schemes
 @mixin dark {
   color-scheme: dark;
-  --primary: var(--black);
-  --secondary: var(--black-light);
+  --primary: var(--blue_dark);
+  --secondary: var(--blue_light);
+  --tertiary: var(--blue);
   // Text
-  --primary_txt: var(--white);
+  --primary_txt: var(--grey-light);
   --secondary_txt: var(--white-dark);
+  --tertiary_txt: var(--white);
+  // Shadow
+  --primary_shadow: var(--grey-light);
+  --secondary_shadow: var(--white-dark);
+  --tertiary_shadow: var(--white);
   // Button
   --primary_btn: var(--blue_light);
   --secondary_btn: var(--blue_dark);
+
+  // Semi-Transparent Button
+  --semi_trasnparent: hsl(0 0% 70% 0.06);
+  --semi_trasnparent_hover: hsl(0 0% 70% 0.1);
+  --semi_trasnparent_active: hsl(0 0% 70% 0.2);
+
+  // Icons
+  --icon_inversion: invert(100%);
 }
 
 @mixin light {
   color-scheme: light;
-  --primary: var(--white);
-  --secondary: var(--white-dark);
+  --primary: var(--blue_light);
+  --secondary: var(--blue_dark);
+  --tertiary: var(--blue);
   // Text
   --primary_txt: var(--black);
   --secondary_txt: var(--black-light);
+  --tertiary_txt: var(--grey-dark);
+  // Shadow
+  --primary_shadow: var(--black);
+  --secondary_shadow: var(--black-light);
+  --tertiary_shadow: var(--grey-dark);
   // Button
   --primary_btn: var(--blue_dark);
   --secondary_btn: var(--blue_light);
+
+  // Semi-Transparent Button
+  --semi_trasnparent: hsl(0 0% 0% 0.06);
+  --semi_trasnparent_hover: hsl(0 0% 0% 0.1);
+  --semi_trasnparent_active: hsl(0 0% 0% 0.2);
+
+  // Icons
+  --icon_inversion: invert(0%);
 }
 
 :root {
   /* Dark colors */
-  --black: hsl(0, 0%, 9%);
-  --black-light: hsl(0, 0%, 14%);
-  --grey-dark: hsl(0, 0%, 19%);
+  --black: hsl(0, 0%, 13%);
+  --black-light: hsl(0, 0%, 22%);
+  --grey-dark: hsl(0, 0%, 30%);
   /* Light colors */
-  --white: hsl(0, 0%, 91%);
-  --white-dark: hsl(0, 0%, 86%);
-  --grey-light: hsl(0, 0%, 81%);
+  --grey-light: hsl(0, 0%, 50%);
+  --white-dark: hsl(0, 0%, 70%);
+  --white: hsl(0, 0%, 80%);
   // Color schemes
-  --blue_light: hsl(210, 100%, 86%);
-  --blue: hsl(210, 24%, 30%);
-  --blue_dark: hsl(210, 40%, 15%);
+  --blue_dark: hsl(215, 95%, 13%);
+  --blue: hsl(214, 79%, 25%);
+  --blue_light: hsl(215, 20%, 70%);
 
+  --red_dark: hsl(6, 100%, 13%);
+  --red: hsl(6, 93%, 25%);
+  --red_light: hsl(6, 56%, 70%);
+
+  --green_dark: hsl(70, 100%, 13%);
+  --green: hsl(70, 93%, 25%);
+  --green_light: hsl(70, 50%, 70%);
+  // Semi-Transparent Button
+  --semi_trasnparent: hsl(0 0% 70% 0.06);
+  --semi_trasnparent_hover: hsl(0 0% 70% 0.1);
+  --semi_trasnparent_active: hsl(0 0% 70% 0.2);
+
+  --icon_inversion: invert(0%);
   @include light;
 
   // Layout lengths
@@ -53,20 +94,21 @@
   padding: 0;
   // SCROLLBAR for Firefox
   scrollbar-width: thin;
-  scrollbar-color: var(--secondary) transparent;
+  scrollbar-color: var(--tertiary) transparent;
 }
 
 html,
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 
 
 
 body {
+
   // Color schemes
   @media (prefers-color-scheme: dark) {
     @include dark;
@@ -79,8 +121,10 @@ body {
   &.dark {
     @include dark;
   }
+  display: flex;
+  // BACKGROUND
+  background-image: linear-gradient(90deg, var(--tertiary), var(--primary));
 }
-
 
 
 
@@ -97,7 +141,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: var(--secondary);
+  background-image: var(--tertiary);
   border-radius: 100vw;
 }
 
@@ -121,18 +165,9 @@ body {
 
 body {
   color: var(--primary_txt);
-  background-color: var(--primary);
   text-rendering: optimizeSpeed;
 }
 
-header {
-  height: var(--header-height);
-  background-color: var(--secondary);
-}
-
-main {
-  min-height: var(--main-height);
-}
 
 // Basic elements
 a {
