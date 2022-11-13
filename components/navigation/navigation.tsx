@@ -1,24 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import styles from '../assets/navigation.module.scss'
+import styles from './navigation.module.scss'
+import { page } from '../types'
 
-interface page {
-  url: string;
-  name: string;
-  img: img;
-}
-
-// interface svg {
-//   d: string;
-//   box: string;
-// }
-interface img {
-  url: string;
-  alt: string;
-  width: number;
-  height: number;
-}
 const pages: page[] = [
   {
     url: '/',
@@ -36,6 +21,16 @@ const pages: page[] = [
     img: {
       url: '/education.svg',
       alt: 'education icon',
+      width: 20,
+      height: 20
+    }
+  },
+  {
+    url: '/repositories',
+    name: 'Projects',
+    img: {
+      url: '/github.svg',
+      alt: 'github icon',
       width: 20,
       height: 20
     }
