@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 // import Image from 'next/image'
-import styles from 'styles/index.module.scss'
+import styles from 'assets/styles/index.module.scss'
 import Introduction from '../components/introduction/introduction'
 
 const Home: NextPage = () => {
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <meta name="author" content="Juan Valenzuela" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <header>
+      <header className={styles.header}>
         <Introduction/>
       </header>
     </>
