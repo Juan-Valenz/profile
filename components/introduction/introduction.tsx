@@ -1,23 +1,19 @@
 import React from 'react'
-import Image from 'next/image'
 import styles from './introduction.module.scss'
 
 interface IntroductionProps {
 
 }
 
-const Introduction: React.FC<IntroductionProps> = ({ }) => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-
-      </div>
-      <div className={styles.right}>
-        <img className={styles.image} src='/cloud_server.png' alt='Cloud Service image'/>
-      </div>
-    </div>
-  );
-}
+const Introduction: React.FC<IntroductionProps> = ({ }) => (
+  <section className={styles.container}>
+    <img className={styles.image} alt='Cloud Service image' />
+    <h2>
+      <span>Let's set the building</span>
+      <span>blocks of your cloud</span>
+    </h2>
+  </section>
+);
 
 
 
