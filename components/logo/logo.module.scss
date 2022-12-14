@@ -1,0 +1,11 @@
+
+// IMAGE
+.container {
+    // LENGTH
+    width: 40px;
+    height: 40px;
+    // Background
+    filter: var(--icon_inversion);
+    // BORDER
+    border-radius: 50px;
+}
