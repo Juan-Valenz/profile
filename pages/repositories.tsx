@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import GithubList from '../components/github_list/githubList';
 import { repository } from '../components/types';
+import RepositoryCard from '../components/repositoryCard/repositoryCard';
 
 interface Props {
   name?: string
 }
 
 const Repositories: React.FC<Props> = ({ }) => {
-  const [repoData, setRepoData] = useState<repository[]>([])
+  const [repositories, setRepositories] = useState<repository[]>([])
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
     setLoading(true)
-    fetch('api/github')
+    fetch('api/repositories')
       .then(res => res.json())
       .then(data => {
-        setRepoData(data.repos)
+        setRepositories(data.repos)
         setLoading(false)
       })
       .catch(err => console.error(err.message))
@@ -30,31 +30,9 @@ const Repositories: React.FC<Props> = ({ }) => {
         <meta name="keywords" content="github, repositories, portfolio " />
         <meta name="author" content="Juan Valenzuela" />
       </Head>
-       <GithubList/>
+      {repositories.map(r=> <RepositoryCard name={r.name} description={r.description} topics={r.topics} languages={r.languages} urls={r.urls} updated={r.updated} created={r.created}/>)}
     </>
   );
-}
-
-const Respository: React.FC<Props> = ({ name }) => {
-  return (
-    <section>
-      <header>
-        <h2>{name}</h2>
-        <p>{description}</p>
-      </header>
-      <h3>
-        Languages
-      </h3>
-      {languages.map(l => (
-        <>
-          <p>{l.language}</p>
-          <p>{l.amount}</p>
-        </>
-      ))}
-      <p>{urls.website}</p>
-      <p>{urls.github}</p>
-    </section>
-  )
 }
 
 
