@@ -22,8 +22,8 @@ export interface repository {
     name?: string;                      //  name
     description?: string;               //  description
     topics?: string[];                  //  topics
-    languages?: coding_language[];      //  languages_url
+    languages_url?: string;      //  languages_url
     urls?: urls;
-    updated?: Date;                     //  updated_at
-    created?: Date;                     //  created_at
+    updated?: string;                     //  updated_at
+    created?: string;                     //  created_at
 }
