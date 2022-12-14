@@ -1,27 +1,52 @@
 .container {
-  display: flex;
-  flex-shrink: 0;
-  flex-grow: 1;
+  position: relative;
+  // Flex
+  // display: flex;
+  // flex-shrink: 0;
+  // flex-grow: 1;
+  // Length
+  height: 100%;
+
+
+
+  h2 {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    top: 150px;
+    // Length
+    max-height: 100vh;
+    margin-inline: auto;
+    // Text
+    font-size: clamp(1rem, 4vw , 5rem);
+    // font-size: 1.8rem;
+    color: hsl(var(--primary_txt));
+    text-align: center;
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-shadow: 1px 1px hsla(0, 0%, 100%, .3);
+    // Border
+    border-radius: 10px;
+
+    * {
+      display: block;
+    }
+  }
 }
 
-.left {
-  width: 50vw;
-}
-
-.right {
-  width: 50vw;
-}
 
 .image {
-  position: relative;
-  left: 0%;
-  top: 50%;
-  width: 303px;
-  height: 138px;
-  @media (width > 870px) {
-    width: 803px;
-    height: 338px;
+  content: url(/images/cloud_server.png);
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  // Length
+  width: clamp(21.19rem, calc(12.97rem + 35.56vw), 55.19rem);
+  aspect-ratio: 803/338;
+  // @media (870px < width) {
+  //   width: 803px;
+  //   height: 338px;
+  // }
 
-  }
-  transition: width 2s, height 2s; 
+  transition: width 2s,
+  height 2s;
 }
