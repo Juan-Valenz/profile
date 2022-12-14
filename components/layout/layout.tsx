@@ -1,24 +1,26 @@
-import React, { useEffect } from 'react'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
+import Logo from '../logo/logo';
 import Navigation from '../navigation/navigation';
-import styles from './layout.module.scss'
-import Head from 'next/head';
+import { Helmet } from 'react-helmet';
+import styles from './layout.module.scss';
+import { useThemeState } from '../ThemeHook';
 
 interface Props {
     children: JSX.Element | JSX.Element[]
 }
-
 const Layout: React.FC<Props> = ({ children }) => {
-    
+    /*  VARIABLES   */
+    const [theme, setTheme] = useThemeState();
+
+    /*  Html    */
     return (
         <>
-            <Head>
-                <body className='light' />
-            </Head>
+            <Helmet>
+                <body className={theme} />
+            </Helmet>
             <header className={styles.header}>
-                <Image className={styles.logo} src='/profile.svg' alt='Company Logo' width={30} height={30} />
+                <Logo url={'/'} img={{ url: '/icons/profile.svg', alt: 'Logo' }} />
                 <Navigation />
-                <button className={styles.colorScheme}><Image className={styles.logo} src='/sun.svg' alt='Color Schema Button' width={20} height={20} /></button>
             </header>
             <main className={styles.main}>{children}</main>
         </>
