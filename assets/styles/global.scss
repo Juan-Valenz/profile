@@ -1,0 +1,164 @@
+// Color schemes
+@mixin dark {
+  color-scheme: dark;
+  --basic: var(--black);
+  --primary: var(--black-light);
+  --secondary: var(--blue-dark);
+  --accent: var(--blue-light);
+  // Text
+  --basic_txt: var(--white);
+  --primary_txt: var(--white-dark);
+  --secondary_txt: var(--blue-light);
+  --accent_txt: var(--blue-dark);
+  // Icons
+  --icon_inversion: invert(100%);
+  --icon_inversion_reverse: invert(0%);
+}
+
+@mixin light {
+  color-scheme: light;
+  --basic: var(--white);
+  --primary: var(--white-dark);
+  --secondary: var(--blue-light);
+  --accent: var(--blue-dark);
+  // Text
+  --basic_txt: var(--black);
+  --primary_txt: var(--black-light);
+  --secondary_txt: var(--blue-dark);
+  --accent_txt: var(--blue-light);
+
+  // Icons
+  --icon_inversion: invert(0%);
+  --icon_inversion_reverse: invert(100%);
+}
+
+:root {
+  /* Dark colors */
+  --black: 0 0% 13%;
+  --black-light: 0 0% 22%;
+  --grey-dark: 0 0% 30%;
+  /* Light colors */
+  --grey-light: 0 0% 60%;
+  --white-dark: 0 0% 75%;
+  --white: 0 0% 90%;
+
+  // Color schemes
+  --blue-black: 215 100% 13%;
+  --blue-dark: 215 85% 18%;
+  --blue-2: 215 80% 25%;
+  --blue-1: 215 60% 50%;
+  --blue-light: 215 85% 70%;
+  --blue-white: 215 100% 80%;
+
+  --red_black: 6 100% 13%;
+  --red-dark: 6 85% 18%;
+  --red-2: 6 80% 25%;
+  --red-1: 6 60% 50%;
+  --red_light: 6 85% 70%;
+  --red-white: 6 100% 80%;
+
+  --green_black: 70 100% 13%;
+  --green-dark: 70 85% 18%;
+  --green-2: 70 80% 25%;
+  --green-1: 70 60% 50%;
+  --green_light: 70 85% 70%;
+  --green-white: 70 100% 90%;
+
+  @include light;
+
+  // Layout lengths
+  --header-height: 4rem;
+}
+
+*,
+*::before,
+*::after {
+  //  LENGTH
+  margin: 0;
+  padding: 0;
+  // box sizing
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  // SCROLLBAR for Firefox
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--tertiary)) transparent;
+}
+
+html,
+body {
+  //  LENGTH
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+body {
+
+  // Color schemes
+  @media (prefers-color-scheme: dark) {
+    @include dark;
+  }
+
+  &.light {
+    @include light;
+  }
+
+  &.dark {
+    @include dark;
+  }
+
+  //  FLEX
+  display: flex;
+  //  BACKGROUND
+  background-color: hsl(var(--secondary));
+  //  TEXT
+  color: hsl(var(--primary_txt));
+  text-rendering: optimizeSpeed;
+}
+
+
+
+
+/* SCROLLBAR for Chrome, Edge and Safari */
+::-webkit-scrollbar {
+  width: 0.5vw;
+  height: 0.5vw;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10vw;
+  height: 10vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: hsl(var(--tertiary));
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-track {
+  margin-block: 5em;
+  background-color: transparent;
+  border-radius: 100vw;
+}
+
+
+
+
+// Layout
+// #__next {
+//   display: flex;
+// }
+
+
+// Basic elements
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a,
+button{
+  cursor: pointer;
+}
