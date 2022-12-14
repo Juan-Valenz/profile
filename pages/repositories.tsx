@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import { repository } from '../components/types';
 import GithubList from '../components/github_list/githubList';
+import { repository } from '../components/types';
 
 interface Props {
-
+  name?: string
 }
 
 const Repositories: React.FC<Props> = ({ }) => {
+  const [repoData, setRepoData] = useState<repository[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('api/github')
+      .then(res => res.json())
+      .then(data => {
+        setRepoData(data.repos)
+        setLoading(false)
+      })
+      .catch(err => console.error(err.message))
+  }, [])
+
   return (
     <>
       <Head>
@@ -21,7 +35,7 @@ const Repositories: React.FC<Props> = ({ }) => {
   );
 }
 
-const Respository: React.FC<repository> = ({ name, description, languages, urls, updated, created }) => {
+const Respository: React.FC<Props> = ({ name }) => {
   return (
     <section>
       <header>
