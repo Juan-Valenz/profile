@@ -1,14 +1,17 @@
-import '../styles/global.scss'
-import type { AppProps } from 'next/app'
-import { Head } from 'next/document'
-import Layout from '../components/layout/layout'
+import '../assets/styles/global.scss';
+import type { AppProps } from 'next/app';
+import Layout from '../components/layout/layout';
+import { ModalContextProvider } from '@rintsin/common-components';
+import { ThemeProvider } from '../components/ThemeHook';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
-}
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider>
+    <ModalContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ModalContextProvider>
+  </ThemeProvider>
+)
 
 export default MyApp
