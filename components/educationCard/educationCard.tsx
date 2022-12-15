@@ -21,7 +21,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ school, school_url, descr
             <section>
                 <div className={styles.links}>
                     <div>
-                        <a href={school_url}>
+                        <a href={school_url} target='_blank'>
                             <Image title='website' src="/icons/globe.svg" alt="" layout='fill' />
                         </a>
                     </div>
