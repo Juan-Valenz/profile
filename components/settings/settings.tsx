@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useThemeState } from '../ThemeHook';
+import { useThemeState } from '../themeHook';
 import styles from './settings.module.scss'
 interface SettingsProps {
 
