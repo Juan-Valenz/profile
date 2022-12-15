@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './repositoryCard.module.scss';
 import { coding_language, urls } from '../../types/github';
+import Image from 'next/image';
 
 interface RepositoryCardProps {
     name?: string;
@@ -53,10 +54,10 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
                 <div className={styles.links}>
                     <div>
                         <a href={urls?.github}>
-                            <img src="/icons/github.svg" alt="" />
+                            <Image title='Github' src="/icons/github.svg" alt="" layout='fill' />
                         </a>
                         {urls?.website && <a href={urls?.website}>
-                            <img src="/icons/globe.svg" alt="" />
+                            <Image title='website' src="/icons/globe.svg" alt="" width={15} layout='fill' />
                         </a>}
                     </div>
                 </div>
