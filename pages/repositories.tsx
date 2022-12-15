@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import { repository } from '../components/types';
 import RepositoryCard from '../components/repositoryCard/repositoryCard';
+import { repository } from '../types/github';
+import styles from 'assets/styles/repositories.module.scss'
 
 interface Props {
   name?: string
@@ -9,15 +10,11 @@ interface Props {
 
 const Repositories: React.FC<Props> = ({ }) => {
   const [repositories, setRepositories] = useState<repository[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
-
   useEffect(() => {
-    setLoading(true)
     fetch('api/repositories')
       .then(res => res.json())
       .then(data => {
         setRepositories(data.repos)
-        setLoading(false)
       })
       .catch(err => console.error(err.message))
   }, [])
@@ -30,7 +27,14 @@ const Repositories: React.FC<Props> = ({ }) => {
         <meta name="keywords" content="github, repositories, portfolio " />
         <meta name="author" content="Juan Valenzuela" />
       </Head>
-      {repositories.map(r=> <RepositoryCard name={r.name} description={r.description} topics={r.topics} languages={r.languages} urls={r.urls} updated={r.updated} created={r.created}/>)}
+      <section className={styles.repositories}>
+        <header>
+          <h2>Github Repositories</h2>
+        </header>
+        <div>
+          {repositories.map(r => <RepositoryCard name={r.name} description={r.description} topics={r.topics} languages_url={r.languages_url} urls={r.urls} updated={r.updated} created={r.created} />)}
+        </div>
+      </section>
     </>
   );
 }
