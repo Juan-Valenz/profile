@@ -17,12 +17,14 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
 
     const [languages, setLanguages] = useState<coding_language[]>([])
     useEffect(() => {
-        fetch('api/languages', { body: JSON.stringify({ "language_url": languages_url? languages_url.toString():"" }) })
+        if(languages_url){
+        fetch('api/languages', { body: JSON.stringify({ "language_url": languages_url.toString() }) })
             .then(res => res.json())
             .then(data => {
                 setLanguages(data.languages)
             })
             .catch(err => console.error(err.message))
+        }
     }, [])
 
 
