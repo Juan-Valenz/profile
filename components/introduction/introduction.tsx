@@ -1,13 +1,9 @@
 import React from 'react'
 import styles from './introduction.module.scss'
 
-interface IntroductionProps {
-
-}
-
-const Introduction: React.FC<IntroductionProps> = ({ }) => (
+const Introduction: React.FC = ({ }) => (
   <section className={styles.container}>
-    <img className={styles.image} alt='Cloud Service image' />
+    <img className={styles.image} alt="Cloud Service image" />
     <h2>
       <span>Let's set the building</span>
       <span>blocks of your cloud</span>
