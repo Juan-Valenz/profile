@@ -32,7 +32,7 @@ const Repositories: React.FC<Props> = ({ }) => {
           <h2>Github Repositories</h2>
         </header>
         <div>
-          {repositories.map(r => <RepositoryCard name={r.name} description={r.description} topics={r.topics} languages_url={r.languages_url} urls={r.urls} updated={r.updated} created={r.created} />)}
+          {repositories.map(r => <RepositoryCard key={r.name} name={r.name} description={r.description} topics={r.topics} languages_url={r.languages_url} urls={r.urls} updated={r.updated} created={r.created} />)}
         </div>
       </section>
     </>
