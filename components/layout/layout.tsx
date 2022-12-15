@@ -3,7 +3,7 @@ import Logo from '../logo/logo';
 import Navigation from '../navigation/navigation';
 import { Helmet } from 'react-helmet';
 import styles from './layout.module.scss';
-import { useThemeState } from '../ThemeHook';
+import { useThemeState } from '../themeHook';
 
 interface Props {
     children: JSX.Element | JSX.Element[]
