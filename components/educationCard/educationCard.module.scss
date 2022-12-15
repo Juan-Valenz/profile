@@ -28,16 +28,17 @@
         .links {
             >div {
                 display: flex;
-                column-gap: 5px;  
+                column-gap: 5px;
                 a {
-                    width: fit-content;
-                    height: fit-content;
+                    position: relative;
+                    width: 15px;
+                    aspect-ratio: 1/1;
 
                     img {
-                        width: 20px;
                         // Background
                         filter: var(--icon_inversion);
                     }
+
                 }
             }
 
