@@ -16,14 +16,29 @@ interface RepositoryCardProps {
 const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topics, languages_url, urls, updated, created }) => {
 
     const [languages, setLanguages] = useState<coding_language[]>([])
+
+
     useEffect(() => {
-        if(languages_url){
-        fetch('api/languages', { body: JSON.stringify({ "language_url": languages_url.toString() }) })
-            .then(res => res.json())
-            .then(data => {
-                setLanguages(data.languages)
+        let headersList = {
+            "Accept": "*/*",
+            "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+            "Content-Type": "application/json"
+        }
+
+        let bodyContent = JSON.stringify({
+            "language_url": "https://api.github.com/repos/Juan-Valenz/Api_Files/languages"
+        });
+        if (languages_url) {
+            fetch('api/languages', {
+                method: "GET",
+                body: bodyContent,
+                headers: headersList
             })
-            .catch(err => console.error(err.message))
+                .then(res => res.json())
+                .then(data => {
+                    setLanguages(data.languages)
+                })
+                .catch(err => console.error(err.message))
         }
     }, [])
 
@@ -44,10 +59,10 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
                 <div className={styles.languages}>
                     <h4>Languages:</h4>
                     <div>
-                        {languages.map(l =>
+                        {languages?.map(l =>
                             <div key={l.language}>
                                 <p>{l?.language}</p>
-                                <p>{JSON.stringify(l.amount)}</p>
+                                {/* <p>{JSON.stringify(l.amount)}</p> */}
                             </div>)}
                     </div>
                 </div>
