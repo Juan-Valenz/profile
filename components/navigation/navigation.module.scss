@@ -19,12 +19,12 @@
     max-height: 60px;
   }
 
-  &[aria-expanded="false"] {
+  &[aria-hidden="true"] {
     display: none;
   }
 
   @media (width > 600px) {
-    &[aria-expanded="false"] {
+    &[aria-hidden="true"] {
       display: flex;
     }
 
