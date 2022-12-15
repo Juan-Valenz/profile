@@ -25,10 +25,12 @@
             text-shadow: 1px 1px 2px hsl(var(--accent));
         }
     }
+
     h4 {
         font-size: 15px;
     }
-    > section {
+
+    >section {
         width: 100%;
         display: flex;
         gap: 5px;
@@ -37,18 +39,21 @@
         .links {
             display: flex;
             gap: 10px;
+
             >div {
                 display: flex;
-                column-gap: 5px;  
+                column-gap: 5px;
+
                 a {
-                    width: fit-content;
-                    height: fit-content;
+                    position: relative;
+                    width: 15px;
+                    aspect-ratio: 1/1;
 
                     img {
-                        width: 15px;
                         // Background
                         filter: var(--icon_inversion);
                     }
+
                 }
             }
 
@@ -58,6 +63,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+
             >div {
                 display: flex;
                 gap: 5px;
@@ -74,19 +80,22 @@
         }
 
     }
-    .dates{
+
+    .dates {
         align-self: flex-end;
         // Flex
         display: flex;
         flex-direction: column;
         gap: 5px;
         // Text
-        font-size:  10px;
-        > div {
+        font-size: 10px;
+
+        >div {
             display: flex;
             flex-direction: column;
             gap: 1px;
-            p + p{
+
+            p+p {
                 margin-left: 5px;
             }
         }
