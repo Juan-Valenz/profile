@@ -4,11 +4,8 @@ import RepositoryCard from '../components/repositoryCard/repositoryCard';
 import { repository } from '../types/github';
 import styles from 'assets/styles/repositories.module.scss'
 
-interface Props {
-  name?: string
-}
 
-const Repositories: React.FC<Props> = ({ }) => {
+const Repositories: React.FC = ({ }) => {
   const [repositories, setRepositories] = useState<repository[]>([])
   useEffect(() => {
     fetch('api/repositories')
@@ -27,7 +24,7 @@ const Repositories: React.FC<Props> = ({ }) => {
         <meta name="keywords" content="github, repositories, portfolio " />
         <meta name="author" content="Juan Valenzuela" />
       </Head>
-      <section className={styles.repositories}>
+      <section className={styles.container}>
         <header>
           <h2>Github Repositories</h2>
         </header>
