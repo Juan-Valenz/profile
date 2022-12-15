@@ -17,24 +17,24 @@ export interface img {
     alt: string;
 }
 
-// github repositories
-export interface urls {
-    website: string;
-    github: string;
-}
-export interface coding_language {
-    language: string;
-    amount: number;
-}
-export interface repository {
-    name: string;
-    updated: Date;
-    created: Date;
-    description: string;
-    urls: urls
-    languages: coding_language[]
-    topics: string[]
-}
+// // github repositories
+// export interface urls {
+//     website: string;
+//     github: string;
+// }
+// export interface coding_language {
+//     language: string;
+//     amount: number;
+// }
+// export interface repository {
+//     name: string;
+//     updated: Date;
+//     created: Date;
+//     description: string;
+//     urls: urls
+//     languages: coding_language[]
+//     topics: string[]
+// }
 
     // const [width, setWidth] = useState<number>();
     // useEffect(() => {
