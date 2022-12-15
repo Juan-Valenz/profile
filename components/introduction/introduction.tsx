@@ -9,7 +9,7 @@ const Introduction: React.FC = () => (
       <Image src="/images/cloud_server.png" alt="Cloud Service image" layout='fill' />
     </div>
     <h2>
-      <span>Let's set the building</span>
+      <span>Let&apos;s set the building</span>
       <span>blocks of your cloud</span>
     </h2>
   </section>
