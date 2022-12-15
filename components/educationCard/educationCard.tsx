@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 import styles from './educationCard.module.scss'
 interface EducationCardProps {
@@ -19,10 +20,9 @@ const EducationCard: React.FC<EducationCardProps> = ({ school, school_url, descr
             </section>
             <section>
                 <div className={styles.links}>
-                    <h4>Links</h4>
                     <div>
                         <a href={school_url}>
-                            <img src="/icons/globe.svg" alt="" />
+                            <Image src="/icons/globe.svg" alt="" layout='fill' />
                         </a>
                     </div>
                 </div>
