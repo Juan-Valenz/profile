@@ -16,7 +16,7 @@ export interface urls {
 }
 export interface coding_language {
     language?: string;
-    amount?: number | unknown;
+    amount?: number;
 }
 export interface repository {
     name?: string;                      //  name
