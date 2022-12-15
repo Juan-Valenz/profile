@@ -24,7 +24,7 @@ const pages: page[] = [
 
 
 const Navigation: React.FC = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   const { modal } = useModalContext();
   const display = () =>
@@ -34,14 +34,14 @@ const Navigation: React.FC = () => {
     });
   return (
     <>
-      <button className={styles.icon} aria-expanded={expanded} aria-controls="nav" onClick={() => setExpanded(e => e = !e)}>
-        <Image src={expanded ? '/icons/x.svg' : '/icons/burger.svg'} alt='expand navigation icon' layout='fill' />
+      <button className={styles.icon} aria-expanded={!hidden} aria-controls="nav" onClick={() => setHidden(e => e = !e)}>
+        <Image src={!hidden ? '/icons/x.svg' : '/icons/burger.svg'} alt='expand navigation icon' layout='fill' />
       </button>
-      <nav id='nav' className={`${styles.nav}`} aria-hidden={expanded!}>
+      <nav id='nav' className={`${styles.nav}`} aria-hidden={hidden}>
         {
-          pages && pages.map(page => <Link key={page.url} url={page.url} name={page.name} onClick={async () => { await timeout(200); setExpanded(e => !e) }} />)
+          pages && pages.map(page => <Link key={page.url} url={page.url} name={page.name} onClick={async () => { await timeout(200); setHidden(e => !e) }} />)
         }
-        <PopUpLink onClick={() => { display(); setExpanded(e => !e) }} name={'Settings'} />
+        <PopUpLink onClick={() => { display(); setHidden(e => !e) }} name={'Settings'} />
       </nav>
     </>
   )
