@@ -23,6 +23,8 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
             })
             .catch(err => console.error(err.message))
     }, [])
+
+
     return (
         <div className={styles.container}>
             <header>
@@ -33,7 +35,7 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
                 <div className={styles.topics}>
                     <h4>Topics</h4>
                     <div>
-                        {topics?.map(t => <div>{t.toString()}</div>)}
+                        {topics?.map(t => <div key={t}>{t.toString()}</div>)}
                     </div>
                 </div>
                 <div className={styles.languages}>
@@ -48,7 +50,6 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
                 </div>
             </section>
             <section>
-
                 <div className={styles.links}>
                     <h4>Links</h4>
                     <div>
