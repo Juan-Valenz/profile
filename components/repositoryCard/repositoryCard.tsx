@@ -53,10 +53,10 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
             <section>
                 <div className={styles.links}>
                     <div>
-                        <a href={urls?.github}>
+                        <a href={urls?.github} target='_blank'>
                             <Image title='Github' src="/icons/github.svg" alt="" layout='fill' />
                         </a>
-                        {urls?.website && <a href={urls?.website}>
+                        {urls?.website && <a href={urls?.website} target='_blank'>
                             <Image title='website' src="/icons/globe.svg" alt="" width={15} layout='fill' />
                         </a>}
                     </div>
