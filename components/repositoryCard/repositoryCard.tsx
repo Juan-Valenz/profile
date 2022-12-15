@@ -33,13 +33,13 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
             </header>
             <section>
                 <div className={styles.topics}>
-                    <h4>Topics</h4>
+                    <h4>Topics:</h4>
                     <div>
                         {topics?.map(t => <div key={t}>{t.toString()}</div>)}
                     </div>
                 </div>
                 <div className={styles.languages}>
-                    <h4>Languages</h4>
+                    <h4>Languages:</h4>
                     <div>
                         {languages.map(l =>
                             <div key={l.language}>
@@ -51,7 +51,6 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
             </section>
             <section>
                 <div className={styles.links}>
-                    <h4>Links</h4>
                     <div>
                         <a href={urls?.github}>
                             <img src="/icons/github.svg" alt="" />
@@ -62,8 +61,8 @@ const RepositoryCard: React.FC<RepositoryCardProps> = ({ name, description, topi
                     </div>
                 </div>
                 <div className={styles.dates}>
-                    <p>Created: {created && new Date(created).toDateString()}</p>
-                    <p>Updated: {updated && new Date(updated).toDateString()}</p>
+                    <div><p>Created: </p>{created && <p>{new Date(created).toDateString()}</p>}</div>
+                    <div><p>Updated:</p> {updated && <p>{new Date(updated).toDateString()}</p>}</div>
                 </div>
             </section>
 
