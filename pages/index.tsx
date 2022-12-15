@@ -8,7 +8,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        {/* <body className='light'/> */}
         <title>Juan Valenz | Portfolio</title>
         <meta name="description" content="General Description about myself, my work and hobbies." />
         <meta name="keywords" content="enterprise website development, bussiness website development ,sanitary website development,UI ,UX ,Website developer ,Website ,Cleaning Service ,freelancer ,web developer ,programmer,Portfolio,HTML, CSS, JavaScript, enterprise, business" />
