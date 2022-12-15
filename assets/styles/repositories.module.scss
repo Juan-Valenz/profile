@@ -1,0 +1,14 @@
+.repositories {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    // Length
+    padding-inline: 6%;
+
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+}
