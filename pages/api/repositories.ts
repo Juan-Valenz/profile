@@ -15,10 +15,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
     repos.forEach(r => {
         repositories.push({
-            name: r.name
+            name: r.name,
+            description: r.description,
+            topics: r.topics,
+            languages_url: r.languages_url,
+            created: r.created_at,
+            updated: r.updated_at,
+            urls: {
+                website: r.homepage,
+                github: r.html_url
+            }
         })
-    });
-
+    })
     res.status(200).json({ repos: repositories })
     res.end()
 }
