@@ -34,15 +34,15 @@ const Navigation: React.FC = () => {
     });
   return (
     <>
-      <nav className={`${styles.nav}`} aria-expanded={expanded}>
-        {
-          pages && pages.map(page => <Link key={page.url} url={page.url} name={page.name} onClick={async()=>{ await timeout(200) ;setExpanded(e=>!e)}} />)
-        }
-        <PopUpLink onClick={()=>{display(); setExpanded(e=>!e)}} name={'Settings'} />
-      </nav>
-      <button className={styles.icon} aria-expanded={expanded} onClick={() => setExpanded(e => e = !e)}>
+      <button className={styles.icon} aria-expanded={expanded} aria-controls="nav" onClick={() => setExpanded(e => e = !e)}>
         <Image src={expanded ? '/icons/x.svg' : '/icons/burger.svg'} alt='expand navigation icon' layout='fill' />
       </button>
+      <nav id='nav' className={`${styles.nav}`} aria-hidden={expanded!}>
+        {
+          pages && pages.map(page => <Link key={page.url} url={page.url} name={page.name} onClick={async () => { await timeout(200); setExpanded(e => !e) }} />)
+        }
+        <PopUpLink onClick={() => { display(); setExpanded(e => !e) }} name={'Settings'} />
+      </nav>
     </>
   )
 }
