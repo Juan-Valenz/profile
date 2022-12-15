@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 20px;
     // Lenght
     width: clamp(400px, calc(395px + 1%), 500px);
     aspect-ratio: 1/.5;
@@ -16,9 +16,18 @@
     border-radius: 50px;
 
     header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         width: 100%;
-    }
 
+        h3 {
+            text-shadow: 1px 1px 2px hsl(var(--accent));
+        }
+    }
+    h4 {
+        font-size: 15px;
+    }
     > section {
         width: 100%;
         display: flex;
@@ -26,6 +35,8 @@
         justify-content: space-between;
 
         .links {
+            display: flex;
+            gap: 10px;
             >div {
                 display: flex;
                 column-gap: 5px;  
@@ -34,7 +45,7 @@
                     height: fit-content;
 
                     img {
-                        width: 20px;
+                        width: 15px;
                         // Background
                         filter: var(--icon_inversion);
                     }
@@ -44,6 +55,9 @@
         }
 
         .topics {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             >div {
                 display: flex;
                 gap: 5px;
@@ -65,7 +79,16 @@
         // Flex
         display: flex;
         flex-direction: column;
+        gap: 5px;
         // Text
         font-size:  10px;
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            p + p{
+                margin-left: 5px;
+            }
+        }
     }
 }
