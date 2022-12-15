@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { useThemeState } from '../themeHook';
 import styles from './settings.module.scss'
@@ -15,9 +16,9 @@ const Settings: React.FC<SettingsProps> = () => {
       <section className={styles.themes}>
         <h2>Color theme:</h2>
         <div>
-          <button onClick={() => setTheme('default')}><img src="/icons/default.svg" alt="default" /></button>
-          <button onClick={() => setTheme('dark')}><img src="/icons/moon.svg" alt="moon" /></button>
-          <button onClick={() => setTheme('light')}><img src="/icons/sun.svg" alt="sun" /></button>
+          <button onClick={() => setTheme('default')}><div><Image src="/icons/default.svg" alt="default" layout='fill'/></div></button>
+          <button onClick={() => setTheme('dark')}><div><Image src="/icons/moon.svg" alt="moon" layout='fill'/></div></button>
+          <button onClick={() => setTheme('light')}><div><Image src="/icons/sun.svg" alt="sun" layout='fill' /></div></button>
         </div>
       </section>
     </div>
