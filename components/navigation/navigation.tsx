@@ -13,12 +13,12 @@ const pages: page[] = [
     name: 'Home'
   },
   {
-    url: '/education',
-    name: 'Education'
-  },
-  {
     url: '/repositories',
     name: 'Projects'
+  },
+  {
+    url: '/education',
+    name: 'Education'
   }
 ]
 
@@ -29,8 +29,8 @@ const Navigation: React.FC = () => {
   const { modal } = useModalContext();
   const display = () =>
     modal({
-      showCloseOnRightCorner: true,
-      content: <Settings />,
+      showCloseOnRightCorner: false,
+      content: <Settings />
     });
   return (
     <>

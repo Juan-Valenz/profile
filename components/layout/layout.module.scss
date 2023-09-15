@@ -2,161 +2,160 @@ $header_height: 80px;
 $main_height: calc(100vh - $header_height);
 
 .header {
-    // FLEX
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // LENGTH
-    padding-inline: 20px;
-    height: $header_height;
-    width: 100vw;
-    // Background
-    background-color: hsl(var(--basic));
+  // FLEX
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // LENGTH
+  padding-inline: 20px;
+  height: $header_height;
+  width: 100vw;
+  // Background
+  background-color: hsl(var(--basic));
 }
 
 .main {
-    // LENGTH
-    height: $main_height;
-    padding-top: .8rem;
+  // LENGTH
+  height: $main_height;
+  padding-top: 0.8rem;
 }
 
 .colorScheme {
-    cursor: pointer;
-    //  FLEX
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+  //  FLEX
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // LENGTH
+  width: 20px;
+  height: 20px;
+  margin-block: 5px;
+  // BACKGROUND
+  background-color: hsl(var(--btn));
+  // BORDER
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0px 0px 2px 0px hsl(var(--yellow));
+
+  img {
     // LENGTH
-    width: 20px;
-    height: 20px;
-    margin-block: 5px;
-    // BACKGROUND
-    background-color: hsl(var(--btn));
-    // BORDER
-    border-radius: 50px;
-    border: none;
-    box-shadow: 0px 0px 2px 0px hsl(var(--yellow));
-
-    img {
-        // LENGTH
-        width: 15px;
-        height: 15px;
-    }
+    width: 15px;
+    height: 15px;
+  }
 }
-
 
 /*====================================
                 Waves
 ==================================*/
 
 .waves {
-    /*DISPLAY*/
-    display: block;
+  /*DISPLAY*/
+  display: block;
 }
 
 @media (max-width: 800px) {
-    .waves {
-        /*LENGTH*/
-        height: 150px;
-    }
+  .waves {
+    /*LENGTH*/
+    height: 150px;
+  }
 }
 
 @media (max-width: 650px) {
-    .waves {
-        /*LENGTH*/
-        height: 200px;
-    }
+  .waves {
+    /*LENGTH*/
+    height: 200px;
+  }
 }
 
 @media (max-width: 350px) {
-    .waves {
-        /*LENGTH*/
-        height: 250px;
-    }
+  .waves {
+    /*LENGTH*/
+    height: 250px;
+  }
 }
 
 /* ANIMATIONS */
-.waves>path:nth-child(1) {
-    animation-name: wave1;
-    /*TIME*/
-    animation-iteration-count: infinite;
-    animation-duration: 15s;
-    animation-delay: 0s;
-    /*OTHER*/
-    animation-timing-function: linear;
+.waves > path:nth-child(1) {
+  animation-name: wave1;
+  /*TIME*/
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-delay: 0s;
+  /*OTHER*/
+  animation-timing-function: linear;
 }
 
-.waves>path:nth-child(2) {
-    animation-name: wave2;
-    /*TIME*/
-    animation-iteration-count: infinite;
-    animation-duration: 30s;
-    animation-delay: 0s;
-    /*OTHER*/
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+.waves > path:nth-child(2) {
+  animation-name: wave2;
+  /*TIME*/
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+  animation-delay: 0s;
+  /*OTHER*/
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-.waves>path:nth-child(3) {
-    animation-name: wave3;
-    /*TIME*/
-    animation-iteration-count: infinite;
-    animation-duration: 20s;
-    animation-delay: 0s;
-    /*OTHER*/
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+.waves > path:nth-child(3) {
+  animation-name: wave3;
+  /*TIME*/
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-delay: 0s;
+  /*OTHER*/
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
-.waves>path:nth-child(4) {
-    animation-name: wave4;
-    /*TIME*/
-    animation-iteration-count: infinite;
-    animation-duration: 30s;
-    animation-delay: 0s;
-    /*OTHER*/
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+.waves > path:nth-child(4) {
+  animation-name: wave4;
+  /*TIME*/
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+  animation-delay: 0s;
+  /*OTHER*/
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes wave1 {
-    from {
-        /*HORIZONTAL*/
-        transform: translateX(0);
-    }
+  from {
+    /*HORIZONTAL*/
+    transform: translateX(0);
+  }
 
-    to {
-        /*HORIZONTAL*/
-        transform: translateX(-12px);
-    }
+  to {
+    /*HORIZONTAL*/
+    transform: translateX(-12px);
+  }
 }
 
 @keyframes wave2 {
-    from {
-        transform: translate(-20px, -0.3px);
-    }
+  from {
+    transform: translate(-20px, -0.3px);
+  }
 
-    to {
-        transform: translate(-8px, -0.3px);
-    }
+  to {
+    transform: translate(-8px, -0.3px);
+  }
 }
 
 @keyframes wave3 {
-    from {
-        transform: translate(-3px, -0.5px);
-    }
+  from {
+    transform: translate(-3px, -0.5px);
+  }
 
-    to {
-        transform: translate(-15px, -0.5px);
-    }
+  to {
+    transform: translate(-15px, -0.5px);
+  }
 }
 
 @keyframes wave4 {
-    from {
-        transform: translate(-14px, -0.5px);
-    }
+  from {
+    transform: translate(-14px, -0.5px);
+  }
 
-    to {
-        transform: translate(-2px, -0.5px);
-    }
+  to {
+    transform: translate(-2px, -0.5px);
+  }
 }
